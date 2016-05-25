@@ -8,6 +8,6 @@ Left Arrow: Go Left.
 
 Right Arrow: Go Right.
 
-Down Arrow: Emergency Break, New Game.
+Down Arrow: Emergency Break (when playing), New Game (when dead).
 
 ![picture alt](http://i.imgur.com/TEesof9.png "Dodger Screenshot")
