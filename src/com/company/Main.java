@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         Dodger dodger = new Dodger();
-        dodger.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //dodger.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 }

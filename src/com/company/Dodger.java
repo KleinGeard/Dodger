@@ -11,15 +11,15 @@ import javax.swing.*;
 
 public class Dodger extends JFrame {
 
-    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-    double width = screenSize.getWidth();
-    double height = screenSize.getHeight();
+    //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    //double width = screenSize.getWidth();
+    //double height = screenSize.getHeight();
 
 
 
     private DrawCanvas canvas;
-    public static final int CANVAS_HEIGHT = 1080; //change to whatever you screen size is
-    public static final int CANVAS_WIDTH = 1920;
+    public static final int CANVAS_HEIGHT = 768; //change to whatever you screen size is
+    public static final int CANVAS_WIDTH = 1366;
 
 
     private static final int UPDATE_INTERVAL = 50;
@@ -42,9 +42,10 @@ public class Dodger extends JFrame {
 
     public Dodger() {
 
-        System.out.println(width + " " + height);
+        //System.out.println(width + " " + height);
 
         //initialise items
+        this.setResizable(false);
         this.items = new ArrayList<Item>();
         this.avatar = new Avatar();
         this.dropTimer = 0;
@@ -65,9 +66,9 @@ public class Dodger extends JFrame {
 
         //initialise canvas
         this.canvas = new DrawCanvas(this.items);
-        //this.canvas.setPreferredSize(new Dimension(this.CANVAS_WIDTH, this.CANVAS_HEIGHT));
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.canvas.setPreferredSize(new Dimension(dim));
+        this.canvas.setPreferredSize(new Dimension(this.CANVAS_WIDTH, this.CANVAS_HEIGHT));
+        //Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        //this.canvas.setPreferredSize(new Dimension(dim));
         this.setContentPane(this.canvas);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.pack();
