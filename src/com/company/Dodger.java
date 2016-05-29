@@ -45,7 +45,7 @@ public class Dodger extends JFrame {
         //System.out.println(width + " " + height);
 
         //initialise items
-        this.setResizable(false);
+        //this.setResizable(false);
         this.items = new ArrayList<Item>();
         this.avatar = new Avatar();
         this.dropTimer = 0;

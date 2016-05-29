@@ -8,12 +8,14 @@ public class FallingBlock implements Item {
     private int size;
     private int x;
     private int y;
-    private int speed = 5;
+    private int speed = 6;
     private int accel = 1;
     private Color color;
     private boolean hasCrashed = false; //ensures that the avatar can't crash into the same block twice
 
     public FallingBlock() {
+
+        /*
         switch(Dodger.dropRate) {
             /*
             case 10:
@@ -31,7 +33,7 @@ public class FallingBlock implements Item {
             case 6:
                 this.color = Color.ORANGE;
                 break;
-                */
+
             case 5:
                 this.color = new Color (0, 0, 255);
                 break;
@@ -53,26 +55,37 @@ public class FallingBlock implements Item {
                 }
                 break;
         }
+        */
+        Random random = new Random();
+        int r = random.nextInt(255);
+        int g = random.nextInt(255);
+        int b = random.nextInt(255);
+        this.color = new Color(r, g, b, 150);
 
         //makes the game less ridiculous when the drop rate is only 1
         if (Dodger.dropRate == 1) {
             if (Dodger.doubleOrSingle == dubs.SINGLE) {
-                this.size = 40;
+                this.size = 50;
             } else {
                 this.size = 10;
             }
         } else {
-            this.size = new Random().nextInt(100) + 30;
+            this.size = new Random().nextInt(150) + 30;
         }
-
         this.y = 0 - size;
         this.x = new Random().nextInt(Dodger.CANVAS_WIDTH - this.size);
 
     }
 
     public void draw(Graphics g) {
-        g.setColor(this.color);
-        g.drawRect(x, y, size, size);
+        if (this.hasCrashed) {
+            g.setColor(new Color(0, 255, 0, 150));
+        } else {
+            g.setColor(this.color);
+        }
+
+        g.fillOval(x, y, size, size);
+
     }
 
     public void fall() {

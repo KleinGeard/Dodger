@@ -12,7 +12,7 @@ public class Avatar implements Item {
 
     public void draw(Graphics g) {
         g.setColor(Color.GREEN);
-        g.drawRect(x, y, this.rectSize, this.rectSize);
+        g.fillOval(x, y, this.rectSize, this.rectSize);
     }
 
     public void update() {
@@ -37,9 +37,11 @@ public class Avatar implements Item {
     //changes direction if avatar hits wall
     public void changeIfBumps() {
         if (this.x <= 0) {
-            this.changeDirection(Direction.RIGHT);
+            this.x = 0;
+            this.direction = Direction.RIGHT;
         } else if (this.x >= Dodger.CANVAS_WIDTH - this.rectSize) {
-            this.changeDirection(Direction.LEFT);
+            this.x = Dodger.CANVAS_WIDTH - this.rectSize;
+            this.direction = Direction.LEFT;
         }
     }
 

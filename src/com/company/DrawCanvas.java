@@ -2,6 +2,7 @@ package com.company;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Random;
 import javax.swing.*;
 
 public class DrawCanvas extends JPanel {
@@ -15,7 +16,7 @@ public class DrawCanvas extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        setBackground(Color.BLACK);
+        setBackground(Color.GRAY);
 
         for (Item i : this.items) {
             i.draw(g);
