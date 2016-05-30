@@ -16,7 +16,12 @@ public class DrawCanvas extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+
+        int r = new Random().nextInt(2);
+        //if (r == 0)
         setBackground(Color.GRAY);
+        //else
+        //setBackground(Color.WHITE);
 
         for (Item i : this.items) {
             i.draw(g);

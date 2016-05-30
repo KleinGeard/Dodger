@@ -57,13 +57,12 @@ public class FallingBlock implements Item {
         }
         */
         Random random = new Random();
-        int r = random.nextInt(255);
-        int g = random.nextInt(255);
-        int b = random.nextInt(255);
+        int r = random.nextInt(256);
+        int g = random.nextInt(256);
+        int b = random.nextInt(256);
         this.color = new Color(r, g, b, 150);
-
         //makes the game less ridiculous when the drop rate is only 1
-        if (Dodger.dropRate == 1) {
+        /*if (Dodger.dropRate == 1) {
             if (Dodger.doubleOrSingle == dubs.SINGLE) {
                 this.size = 50;
             } else {
@@ -71,7 +70,8 @@ public class FallingBlock implements Item {
             }
         } else {
             this.size = new Random().nextInt(150) + 30;
-        }
+        }*/
+        this.size = new Random().nextInt(140) + 30;
         this.y = 0 - size;
         this.x = new Random().nextInt(Dodger.CANVAS_WIDTH - this.size);
 
@@ -83,7 +83,6 @@ public class FallingBlock implements Item {
         } else {
             g.setColor(this.color);
         }
-
         g.fillOval(x, y, size, size);
 
     }
