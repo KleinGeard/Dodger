@@ -1,6 +1,10 @@
 package com.company;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 
 public class FallingBlock implements Item {
@@ -13,8 +17,9 @@ public class FallingBlock implements Item {
     private Color color;
     private boolean hasCrashed = false; //ensures that the avatar can't crash into the same block twice
 
-    public FallingBlock() {
 
+
+    public FallingBlock() {
         /*
         switch(Dodger.dropRate) {
             /*
@@ -84,7 +89,6 @@ public class FallingBlock implements Item {
             g.setColor(this.color);
         }
         g.fillOval(x, y, size, size);
-
     }
 
     public void fall() {

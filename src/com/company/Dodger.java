@@ -28,7 +28,7 @@ public class Dodger extends JFrame {
     private FallingBlocks fallingBlocks;
     private int dropTimer;
     private int accelTimer;
-    public static int dropRate = 5;
+    public static int dropRate =5;
     public static int emergencyBreaksLeft = 3;
     public static int numberOfCrashes = 0;
     public static int score = 0;
@@ -50,7 +50,7 @@ public class Dodger extends JFrame {
         this.avatar = new Avatar();
         this.dropTimer = 0;
         this.accelTimer = 0;
-        this.gameOverText = new Text("GAME OVER!");
+        this.gameOverText = new Text("GAME OVER!!");
         this.gameOverText.fallOut();
         try {
             this.reader = new Scanner(file);
